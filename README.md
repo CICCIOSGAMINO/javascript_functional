@@ -31,3 +31,11 @@ and object-oriented styles is a tricky task**.
 ### Content 
 In the folder are present the main functional programming guideliine for Javascript based 
 on the underscore package ! 
+
++ Function as Unit 
++ First-Class Functions 
++ Variable Scope and Closure 
++ Higher-Order Functions 
++ Functions-Building-Functions 
++ Recursion
+

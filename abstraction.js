@@ -65,3 +65,48 @@ console.log(secondItem(letters));
 // The second function allows me to appropriate the correct behavior of nth for a different but related use case:
 console.log(secondItem(['x','z']));
 console.log(secondItem('GRUNT'));
+
+
+// Comparator  ====================================================================================================
+// a comparator is a function that takes two values and returns <1, >1 or zero (less, great, equal)
+num = [1, 2, 6, -2, 0, -23, 56];
+
+function compareLessGreatEqual(x,y){
+	if(x < y) return -1;
+	if(x > y) return 1;
+	return 0;
+}
+
+function lessOrEqual(x, y){
+	return x <= y;
+}
+
+console.log(num.sort(compareLessGreatEqual));
+console.log(num.sort(lessOrEqual));
+
+// comparator function, that takes a predicate anc converts it result to the -1/0/1 resut expected of comparator function 
+function comparator(pred){
+	return function(x, y){
+		if(pred(x ,y)) return -1;
+		else if(pred(y ,x)) return 1;
+		else return 0;  
+	}
+}
+
+console.log(" COMPARATOR : " + num.sort(comparator(lessOrEqual)));
+
+
+
+// Data Abstraction  ===================================================================================================
+
+function getFromCSV(str){
+	return _.reduce(str.split("\n"), function(table, row){
+		table.push(_.map(row.split(","), function(c){
+			return c.trim();
+		}));
+		return table;
+	}, []);
+};
+
+var peopleTable = getFromCSV("name,age,hair\nMerble,35,red\nBob,64,blonde");
+console.log(peopleTable);
