@@ -1,5 +1,5 @@
-Functional Programming 
-======================
+Javascript Functional Programming 
+=================================
 
 ### Intro 
 Having said that, a nice image of a system built along functional principles is an
