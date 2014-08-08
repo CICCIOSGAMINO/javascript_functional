@@ -2,10 +2,11 @@ Functional Programming
 ======================
 
 ### Intro 
-> Having said that, a nice image of a system built along functional principles is an
-> assembly-line device that takes raw materials in one end, and gradually builds a product
-> that comes out the other end. 
+Having said that, a nice image of a system built along functional principles is an
+assembly-line device that takes raw materials in one end, and gradually builds a product
+that comes out the other end. 
 
+> All the Javascript are tested with Node.js (you can use the code in the Browser too).
 
 ### OO Vs Functional 
 In a system observing a strict object-oriented style, the interactions between objects
