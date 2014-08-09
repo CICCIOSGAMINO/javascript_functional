@@ -25,7 +25,6 @@ optimize another aspect of computer time: the time that I spend sitting at a des
 on a keyboard. I find a functional style of writing code to be exceptionally beautiful if
 done well, and I hope that you’ll agree by the time you reach the end (Michael Fogus)**
 
-> All the Javascript are tested with Node.js (you can use the code in the Browser too).
 
 ### Why Functional 
 As programs get bigger, they also become more complex and harder to understand. We all think

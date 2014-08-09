@@ -2,11 +2,11 @@
 	The term “first-class” means that something is just a value. A first-class function is one
 	that can go anywhere that any other value can go—there are few to no restrictions. A
 	number in JavaScript is a first-class thing, and therefore a first-class function has
-	a similar nature: 
+	a similar nature.
 
 */ 
 
-	// use my favorite functional package 
+	// use my favorite functional programming package 
 	var _ = require('underscore');
 
 	// Intro function behaviour  -------------------------------------  functions behaviour  -----------------------------------------
@@ -38,5 +38,5 @@
 	// 1 - take a function as an argument 
 	// 2 - return a function as a result 
 
-	
+
 
