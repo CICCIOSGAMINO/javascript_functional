@@ -1,10 +1,29 @@
 Javascript Functional Programming 
 =================================
 
-### Intro 
+### Intro  
+
+One technique for building JavaScript applications is called “functional programming,” which in a nutshell,
+consists of the following techniques:
+
++ Identifying an abstraction and building a function for it
++ Using existing functions to build more complex abstractions
++ Passing existing functions to other functions to build even more complex abstractions
+
+However, functions are not enough. In fact, functional programming very often works
+best when implemented in concert with powerful data abstractions. There is a beautiful
+symmetry between functional programming and data.
+
 Having said that, a nice image of a system built along functional principles is an
 assembly-line device that takes raw materials in one end, and gradually builds a product
-that comes out the other end. 
+that comes out the other end.
+
+**The first rule of my personal programming style has always been the following: Write
+beautiful code. I’ve achieved this goal to varying degrees of success throughout my
+career, but it’s always something that I strive for. Writing beautiful code allows me to
+optimize another aspect of computer time: the time that I spend sitting at a desk typing
+on a keyboard. I find a functional style of writing code to be exceptionally beautiful if
+done well, and I hope that you’ll agree by the time you reach the end (Michael Fogus)**
 
 > All the Javascript are tested with Node.js (you can use the code in the Browser too).
 

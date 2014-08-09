@@ -17,4 +17,4 @@ function truthy(x){
 truthy(0); 		// true
 truthy('');		// true 
 
-console.log(truthy(0));
+

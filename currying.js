@@ -48,7 +48,7 @@ writeLog(function(err){
 
 /* 
 	The interesting part is that if we are smart, we can implement curriedReadFile so that it starts the asynchronous
-	read operation. And we are not forced to use the reader right away. We can keep it around, pass it to other
+	read operation. And we are not forced to use the reader right now. We can keep it around, pass it to other
 	functions and have our program do other things while the I/O operation progresses. When we need the result, we will call
 	the reader with a callback.
 
@@ -63,6 +63,14 @@ function curriedReadFile(filename, options){
 		fs.readFile(filename, options, callback);
 	};
 };
+
+/* 
+
+	By currying, we have separated the initiation of the asynchronous operation from the retrieval of the result. This is
+	very powerful because now we can initiate several operations in a close sequence, let them do their I/O in parallel, 
+	and retrieve their results afterwards. Here is an example:
+
+*/ 
 
 var opts = {'encoding' : null };
 var readOne = curriedReadFile('message.txt', opts);
