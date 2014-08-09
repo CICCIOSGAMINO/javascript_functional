@@ -48,3 +48,10 @@ on the underscore package !
 + Functions-Building-Functions 
 + Recursion
 
+
+### Tools 
+Are present some tools to get a easy understand of the tricky javascript. 
+
++ tools
++ currying 
+
