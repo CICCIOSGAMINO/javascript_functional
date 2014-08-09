@@ -67,9 +67,3 @@ on the underscore package !
 + Recursion
 
 
-### Tools 
-Are present some tools to get a easy understand of the tricky javascript. 
-
-+ tools
-+ currying 
-
