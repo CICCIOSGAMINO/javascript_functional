@@ -8,6 +8,15 @@ that comes out the other end.
 
 > All the Javascript are tested with Node.js (you can use the code in the Browser too).
 
+### Why Functional 
+As programs get bigger, they also become more complex and harder to understand. We all think
+ourselves pretty clever, of course, but we are mere human beings, and even a moderate amount
+of chaos tends to baffle us. And then it all goes downhill.
+
+That JavaScript supports both models means that systems can and should be composed of both
+models. Finding the balance between functional and object-oriented styles is a tricky task,
+but javascripts good part is a lot inside the functional part. 
+
 ### OO Vs Functional 
 In a system observing a strict object-oriented style, the interactions between objects
 cause internal change to each object, leading to an overall system state that is the amal‐
