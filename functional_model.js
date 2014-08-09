@@ -1,6 +1,13 @@
 // the implementatio describes a "99 bottle of beer "
 
-// first we can see the Imperative programming version 
+// Imperative Programming  ------------------------------------  Imperative Programming  -------------------------------------
+
+/* 
+	This imperative version, is emblematic of an imperative programming style. That is, the implementation
+	describes a “99 Bottles of Beer” pro‐gram and exactly a “99 Bottles of Beer” program. Because imperative
+	code operates at such a precise level of detail, they are often one-shot implementations or at best, difficult
+	to reuse. Further, imperative languages are often restricted to a level of detail
+*/ 
 var i_lyrics = [];
 
 for(var bottles = 99; bottles > 0; bottles--){
@@ -14,4 +21,6 @@ for(var bottles = 99; bottles > 0; bottles--){
 	}
 } 
 
-console.log(i_lyrics);
+
+// Functional Programming  ------------------------------------  Functiona Programming  ------------------------------------------
+

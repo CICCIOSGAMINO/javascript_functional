@@ -6,7 +6,7 @@
 
 */ 
 
-	// use my favorite functional programming package 
+	// use underscore 
 	var _ = require('underscore');
 
 	// Intro function behaviour  -------------------------------------  functions behaviour  -----------------------------------------
