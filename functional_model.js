@@ -1,5 +1,7 @@
 // the implementatio describes a "99 bottle of beer "
 
+var _ = require('underscore');
+
 // Imperative Programming  ------------------------------------  Imperative Programming  -------------------------------------
 
 /* 
@@ -24,3 +26,25 @@ for(var bottles = 99; bottles > 0; bottles--){
 
 // Functional Programming  ------------------------------------  Functiona Programming  ------------------------------------------
 
+// bottle on the wall n-esima abstraction 
+function lyricSegment(n){
+	return _.chain([])
+		.push(n + 'Bottles of beer on the Wall ' + n + ' bottles of beer, Take one down pass it around !! ')
+		.tap(function(lyric){
+			if(n > 1){
+				lyric.push((n -1) + ' bottles of beer on the wall. ');
+			}else{
+				lyric.push('no more bottles of beer on the wall ! ');
+			}
+		})
+		.value()
+};
+
+function song(start, end, lyricGen) {
+	return _.reduce(_.range(start,end,-1),
+		function(acc,n) {
+			return acc.concat(lyricGen(n));
+		}, []);
+	}
+
+console.log(song(99, 0, lyricSegment));
