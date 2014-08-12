@@ -19,6 +19,20 @@ _.sortBy([ 1, 2 ,3  ,-5 ,-6 -20, 100, 0], function(x){
 
 
 // _.groupBy()  -----------------------------------------------------------  groupBy()  -------------------------------------
+var albums = [{title : 'Pump Up The Valuum', type : 'punk rock'},
+			  {title : 'Ribbed', type : 'punk rock'},
+			  {title : 'Appetite for Destruction', type : 'heavy metal'},
+			  {title : 'The Spaghetti Incident?', type : 'heavy metal'}];
+_.groupBy(albums, function(a){
+	return a.type; 
+})
+
+
+// _.countBy()  -----------------------------------------------------------  countBy()  ------------------------------------
+_.countBy(albums, function(a){
+	return a.type; 
+})										// { 'punk rock': 2, 'heavy metal': 2 }
+
 
 
 
@@ -54,7 +68,7 @@ _([1,2,3,4,5]).value(); 			// [1,2,3,4,5]
 
 
 // _.range([start], stop, [step])  ----------------------------------------  range()  ----------------------------------------
-_.range(0,20,5):
+_.range(0,20,5);
 
 
 
