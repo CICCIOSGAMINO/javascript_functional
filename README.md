@@ -51,9 +51,7 @@ nondestructive (i.e., original data is never changed) data transformations. Howe
 hesitate to create a false dichotomy and say that functional and object-oriented styles
 should stand in opposition. 
 
-**That JavaScript supports both models means that systems
-can and should be composed of both models. Finding the balance between functional
-and object-oriented styles is a tricky task**. 
+**That JavaScript supports both models means that systems can and should be composed of both models. Finding the balance between functional and object-oriented styles is a tricky task**
 
 ### Content 
 In the folder are present the main functional programming guideliine for Javascript based 
