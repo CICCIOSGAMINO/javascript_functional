@@ -7,30 +7,61 @@ _.each(['bud','hofferbraun','corona','moretti','peroni','becks','nastro'], funct
 	// console.log(word.charAt(0).toUpperCase() + word.substr(1));
 });
 
+
+
 // _.sortBy()  ------------------------------------------------------------  sortBy()  --------------------------------------
 
 _.sortBy([ 1, 2 ,3  ,-5 ,-6 -20, 100, 0], function(x){
 	return x*x;		// return the Array num sorted by rule x*x 
 }); 
 
+
+
+
+// _.groupBy()  -----------------------------------------------------------  groupBy()  -------------------------------------
+
+
+
+
 // _.first()  -------------------------------------------------------------  first()  ---------------------------------------
 // pass the first n elements of an array 
-_.first([1,2,3,4,5,6,7,8,9],3);
+_.first([1,2,3,4,5,6,7,8,9],3);				// 1 2 3 
+
+
+
+
+// _.all()  ---------------------------------------------------------------  all()  -----------------------------------------
+_.all([1,2,6,5,4,6,3], _.isNumber); 		// true 
+
+
+
+
+// _.any()  ---------------------------------------------------------------  any()  -----------------------------------------
+_.any(['a','v','g', 3], _.isNumber); 		// true 
+
+
+
+
+// _.find()  --------------------------------------------------------------  find()  ----------------------------------------
+_.find(['a','v','g', 3], _.isNumber);		// 3 
+
 
 
 // _.value(obj)  ----------------------------------------------------------  value()  ---------------------------------------
 // Extract the value of a wrapped object 
 _([1,2,3,4,5]).value(); 			// [1,2,3,4,5]
 
+
+
 // _.range([start], stop, [step])  ----------------------------------------  range()  ----------------------------------------
-// A function to create flexibly-numbered lists of integers, handy for each and map loops. start, if omitted, defaults to 0;
-// step defaults to 1. Returns a list of integers from start to stop, incremented (or decremented) by step, exclusive.
-// Note that ranges that stop before they start are considered to be zero-length instead of negative — if you'd like a negative
-// range, use a negative step.
 _.range(0,20,5):
+
+
 
 // _.reduce(list, iterator, memo, [context])  ----------------------------  reduce()  ---------------------------------------
 var sum = _.reduce([1,2,3,5,7,11,13,17,19],function(memo, n ){return memo +n }, 0);
+
+
 
 // _.tap()  ---------------------------------------------------------------  tap()   ----------------------------------------
 // _.tap(object, interceptor) 
@@ -41,6 +72,8 @@ _.chain([1,2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71])
 	.tap(console.log)		// interceptor 
 	.map(function(x){return x*x})
 	.value();
+
+
 
 // _.chain(obj)  -----------------------------------------------------------  chain()  --------------------------------------
 // Returns a wrapped object. Calling methods on this object will continue to return wrapped objects until value is used.
