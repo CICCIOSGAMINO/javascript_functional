@@ -26,7 +26,7 @@ for(var bottles = 99; bottles > 0; bottles--){
 
 // Functional Programming  ------------------------------------  Functiona Programming  ------------------------------------------
 
-// bottle on the wall n-esima abstraction 
+// bottle on the wall n-esima abstraction song slice 
 function lyricSegment(n){
 	return _.chain([])
 		.push(n + 'Bottles of beer on the Wall ' + n + ' bottles of beer, Take one down pass it around !! ')

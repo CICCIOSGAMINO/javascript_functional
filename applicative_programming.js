@@ -37,8 +37,8 @@ function avg(array){
 	}) / _.size(array);
 }
 
-// console.log(doubleAll(nums));
-// console.log(avg(nums));
+doubleAll(nums);
+avg(nums);
 
 
 // _.isEqual , _.isEmpty ,_.isElement , _.isArray , _.isObject , _.isArguments , _.isFunction , _.isString ,
@@ -54,7 +54,8 @@ function complement(pred){
 }
 
 console.log(_.filter(['a', 1, 'B', 2, 6, 'x'], _.isNumber)); 					// [1, 2, 6]
-console.log(_.filter(['a', 1, 'B', 2, 6, 'x'], complement(_.isNumber)));		// 
+console.log(_.filter(['a', 1, 'B', 2, 6, 'x'], complement(_.isNumber)));		// [ 'a', 'B', 'x' ]
+
 
 
 

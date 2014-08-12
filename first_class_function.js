@@ -35,8 +35,7 @@
 	// return function(){return 42}
 
 	// Higher-order function  -------------------------------------------  higher-order functions -------------------------------------
-	// 1 - take a function as an argument 
-	// 2 - return a function as a result 
+	// 1 - take a function as an argument  2 - return a function as a result 
 
 
 
