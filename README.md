@@ -52,7 +52,7 @@ tion. Therefore, adding new features to a system built using functional principl
 matter of understanding how new functions can operate within the context of localized,
 nondestructive (i.e., original data is never changed) data transformations. However, I
 hesitate to create a false dichotomy and say that functional and object-oriented styles
-should stand in opposition. 
+should stand in opposition
 
 **That JavaScript supports both models means that systems can and should be composed of both models. Finding the balance between functional and object-oriented styles is a tricky task**
 
