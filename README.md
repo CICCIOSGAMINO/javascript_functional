@@ -10,6 +10,9 @@ consists of the following techniques:
 + Using existing functions to build more complex abstractions
 + Passing existing functions to other functions to build even more complex abstractions
 
+
+**It is better to have 100 functions operate on one data structure than 10 functions on 10 data structures**
+
 However, functions are not enough. In fact, functional programming very often works
 best when implemented in concert with powerful data abstractions. There is a beautiful
 symmetry between functional programming and data.
