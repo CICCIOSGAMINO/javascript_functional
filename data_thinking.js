@@ -27,8 +27,17 @@
 
 	var creature_a = {name : 'Agloolik', details : 'Ice spirit that aids hunters and fishermen'};
 
+	// _.keys()  --------------------------------------------------------  _.keys()  ---------------------------------------------
+
 	_.keys(creature_a);			// ['name' , 'details']
+
+
+	// _.values()  ------------------------------------------------------  _.values()  -------------------------------------------
+
 	_.values(creature_a); 	
+
+
+	// _.pluck()  -------------------------------------------------------  _.pluck()  -------------------------------------------
 
 	// _.pluck takes an array of objects and a string and returns all of the values at the given key for each object in the array	
 	_.pluck(creatures, 'name'); 		// [ 'Agloolik', 'Wendigo', 'Manticore', 'Daemon' ]
@@ -49,7 +58,18 @@
 	_.map(creatures, _.pairs);						// [[['name', 'Agloolik'],[....] .... ]]
 
 	// rebuild to object 
+	_.object(_.map(creatures, function(x){
+		return [x['name'] , x['details']];
+	}));			
+	// { Agloolik: 'Ice spirit that aids hunters and fishermen', Wendigo: 'Anthropophagous spirit', ... }
 	
+
+	// _.invert(obj)  --------------------------------------------------  _.invert()  -------------------------------------------
+
+	console.log(_.invert({primo : 1, second : 2, third : 3}));		// 	{ '1': 'primo', '2': 'second', '3': 'third' }
+
+
+
 
 
 
