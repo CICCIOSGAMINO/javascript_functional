@@ -54,8 +54,7 @@ should stand in opposition.
 **That JavaScript supports both models means that systems can and should be composed of both models. Finding the balance between functional and object-oriented styles is a tricky task**
 
 ### Content 
-In the folder are present the main functional programming guideliine for Javascript based 
-on the underscore package ! 
+In the folder are present the main functional programming guideliine for Javascript based on the underscore package : 
 
 + Function as Unit 
 + First-Class Functions 

@@ -34,12 +34,21 @@
 	_.pluck(creatures, 'name'); 		// [ 'Agloolik', 'Wendigo', 'Manticore', 'Daemon' ]
 
 
-	//Another way of viewing a JavaScript object is as an array of arrays, each holding a key and a value. 
-	// Underscore provides a function named _.pairs that takes an object and turns it into this nested array:
+/* 
 
-	_.pairs(creature_a);		// [ 'details', 'Ice spirit that aids hunters and fishermen' ] ]
+	Base on underscore.js function like _.keys, _.values, _.pluck  functions deconstruct the given objects into arrays,
+	allowing you to perform sequential actions. 
 
+	ex : _.values({name : 'Ciccio', age : 22}) 			// ['Ciccio', 22]
 
+	Another way of viewing a JavaScript object is as an array of arrays, each holding a key and a value. 
+	Underscore provides a function named _.pairs that takes an object and turns it into this nested array:
+*/  
+
+	_.pairs(creature_a);							// [ 'details', 'Ice spirit that aids hunters and fishermen' ] 
+	_.map(creatures, _.pairs);						// [[['name', 'Agloolik'],[....] .... ]]
+
+	// rebuild to object 
 	
 
 

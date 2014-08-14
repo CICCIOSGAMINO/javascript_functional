@@ -2,6 +2,12 @@
 
 var _ = require('underscore');
 
+
+// _.map()   --------------------------------------------------------------  map()  -----------------------------------------
+_.map([1,2,3,5,7,11,13], function(x){
+	return x*x; 
+}); 
+
 // _.each()   -------------------------------------------------------------  each()  ----------------------------------------
 _.each(['bud','hofferbraun','corona','moretti','peroni','becks','nastro'], function(word){
 	// console.log(word.charAt(0).toUpperCase() + word.substr(1));
