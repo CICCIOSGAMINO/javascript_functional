@@ -10,6 +10,9 @@ consists of the following techniques:
 + Using existing functions to build more complex abstractions
 + Passing existing functions to other functions to build even more complex abstractions
 
+
+**It is better to have 100 functions operate on one data structure than 10 functions on 10 data structures**
+
 However, functions are not enough. In fact, functional programming very often works
 best when implemented in concert with powerful data abstractions. There is a beautiful
 symmetry between functional programming and data.
@@ -49,7 +52,7 @@ tion. Therefore, adding new features to a system built using functional principl
 matter of understanding how new functions can operate within the context of localized,
 nondestructive (i.e., original data is never changed) data transformations. However, I
 hesitate to create a false dichotomy and say that functional and object-oriented styles
-should stand in opposition. 
+should stand in opposition
 
 **That JavaScript supports both models means that systems can and should be composed of both models. Finding the balance between functional and object-oriented styles is a tricky task**
 
