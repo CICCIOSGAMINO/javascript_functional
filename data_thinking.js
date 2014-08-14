@@ -23,7 +23,7 @@
 	var creatures = [{name : 'Agloolik', details : 'Ice spirit that aids hunters and fishermen'},
 					 {name : 'Wendigo', details : 'Anthropophagous spirit'},
 					 {name : 'Manticore', details : 'Lion-human-scorpion hybrid', real : true},
-					 {name : 'Daemon', details : 'Incorporeal spirit', nation : 'greek'}];
+					 {name : 'Daemon', details : 'Incorporeal spirit', nation : 'greek', real : false}];
 
 	var creature_a = {name : 'Agloolik', details : 'Ice spirit that aids hunters and fishermen'};
 
@@ -83,7 +83,12 @@
 
 
  	// _.findWhere()  --------------------------------------------------  _.findWhere()  ----------------------------------------
- 	_.findWhere(creatures, {real : true});  		// { name: 'Manticore', details: '...', real: true }
+ 	_.findWhere(creatures, {real : true});  		// { name: 'Manticore', details: '...', real: true }   only first Object 
+
+
+ 	// _where()  -------------------------------------------------------  _.where()  --------------------------------------------
+ 	console.log(_.where(creatures, {real : false}));  //  [ { name: 'Daemon',details: '...', nation: 'greek', real: false } ]
+
 
 
 	
