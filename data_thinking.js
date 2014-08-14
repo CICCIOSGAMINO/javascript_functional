@@ -22,7 +22,7 @@
 
 	var creatures = [{name : 'Agloolik', details : 'Ice spirit that aids hunters and fishermen'},
 					 {name : 'Wendigo', details : 'Anthropophagous spirit'},
-					 {name : 'Manticore', details : 'Lion-human-scorpion hybrid'},
+					 {name : 'Manticore', details : 'Lion-human-scorpion hybrid', real : true},
 					 {name : 'Daemon', details : 'Incorporeal spirit', nation : 'greek'}];
 
 	var creature_a = {name : 'Agloolik', details : 'Ice spirit that aids hunters and fishermen'};
@@ -79,8 +79,11 @@
 
 
  	// _.pick()  -------------------------------------------------------   _pick()   --------------------------------------------
- 	console.log(_.pick(creature_a, 'details')); 		//  { details: 'Ice spirit that aids hunters and fishermen' }
+ 	_.pick(creature_a, 'details'); 		//  { details: 'Ice spirit that aids hunters and fishermen' }
 
+
+ 	// _.findWhere()  --------------------------------------------------  _.findWhere()  ----------------------------------------
+ 	_.findWhere(creatures, {real : true});  		// { name: 'Manticore', details: '...', real: true }
 
 
 	
