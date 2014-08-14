@@ -78,13 +78,18 @@ _.sortBy([ 1, 2 ,3  ,-5 ,-6 -20, 100, 0], function(x){
 }); 
 
 
+// _.shuffle()  -----------------------------------------------------------  shuffle()  -------------------------------------
+var v = _.shuffle([0,1,2,3,5,7,11,13,17,19]);
+// [ 1, 13, 2, 0, 7, 11, 3, 17, 5, 19 ]
+
+
 // _.tap()  ---------------------------------------------------------------  tap()   ----------------------------------------
 // _.tap(object, interceptor) 
 // Invokes interceptor with the object, and then returns object. The primary purpose of this method is to "tap into" a method
 // chain, in order to perform operations on intermediate results within the chain.
 _.chain([1,2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71])
 	.filter(function(n){return n %2 == 1})
-	.tap(console.log)		// interceptor 
+	// .tap(console.log)		// interceptor 
 	.map(function(x){return x*x})
 	.value();
 

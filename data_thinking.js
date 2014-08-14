@@ -28,17 +28,14 @@
 	var creature_a = {name : 'Agloolik', details : 'Ice spirit that aids hunters and fishermen'};
 
 	// _.keys()  --------------------------------------------------------  _.keys()  ---------------------------------------------
-
 	_.keys(creature_a);			// ['name' , 'details']
 
 
 	// _.values()  ------------------------------------------------------  _.values()  -------------------------------------------
-
 	_.values(creature_a); 	
 
 
 	// _.pluck()  -------------------------------------------------------  _.pluck()  -------------------------------------------
-
 	// _.pluck takes an array of objects and a string and returns all of the values at the given key for each object in the array	
 	_.pluck(creatures, 'name'); 		// [ 'Agloolik', 'Wendigo', 'Manticore', 'Daemon' ]
 
@@ -62,14 +59,27 @@
 		return [x['name'] , x['details']];
 	}));			
 	// { Agloolik: 'Ice spirit that aids hunters and fishermen', Wendigo: 'Anthropophagous spirit', ... }
-	
+
 
 	// _.invert(obj)  --------------------------------------------------  _.invert()  -------------------------------------------
-
-	console.log(_.invert({primo : 1, second : 2, third : 3}));		// 	{ '1': 'primo', '2': 'second', '3': 'third' }
-
+	_.invert({primo : 1, second : 2, third : 3});		// 	{ '1': 'primo', '2': 'second', '3': 'third' }
 
 
+ /* 
+ 	Underscore also provides functions for filling in and removing values from objects according to the values that they take:
+ */
+
+ 	// _.defaults()  ---------------------------------------------------  _.defaults()  -----------------------------------------
+ 	_.defaults(creature_a, {real : false});				// { name: 'Agloolik', details: ' ... ', real: false }
+
+
+ 	// _.omit()  -------------------------------------------------------   _.omit()   -------------------------------------------
+ 	_.omit(creature_a, 'details');						// { name: 'Agloolik', real: false }  --> 'details' is omitted 
+   
+
+
+ 	// _.pick()  -------------------------------------------------------   _pick()   --------------------------------------------
+ 	console.log(_.pick(creature_a, 'details')); 		//  { details: 'Ice spirit that aids hunters and fishermen' }
 
 
 
