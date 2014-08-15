@@ -87,7 +87,7 @@
 
 
  	// _where()  -------------------------------------------------------  _.where()  --------------------------------------------
- 	console.log(_.where(creatures, {real : false}));  //  [ { name: 'Daemon',details: '...', nation: 'greek', real: false } ]
+ 	_.where(creatures, {real : false});  //  [ { name: 'Daemon',details: '...', nation: 'greek', real: false } ]
 
 
 
