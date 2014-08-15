@@ -11,6 +11,8 @@
 */ 
 
 	function project(table, keys){
-		
+		return _.map(table, function(obj){
+			return _.pick.apply(null, construct(obj, keys));
+		});
 	}
 
