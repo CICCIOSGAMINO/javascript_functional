@@ -65,6 +65,16 @@ _.map([1,2,3,5,7,11,13], function(x){
 	return x*x; 
 }); 
 
+
+//  _.matches()  ----------------------------------------------------------  matches()  ----------------------------------------
+var list = [{_id : '5dg8d4gsf', temp : 25, pressure : 101325, humidity : 45}, {_id : '5dg8d4gsf', temp : 20, pressure : 101325, humidity : 45}];
+var temp_25  = _.matches({temp : 25 });	// returns a predicate function,if a passed in obj contains all the key/values 
+console.log(_.filter(list, temp_25));
+
+
+// _-noConflict()  --------------------------------------------------------  noConflict()  -----------------------------------
+var underscore = _.noConflict(); 
+
 // _.range([start], stop, [step])  ----------------------------------------  range()  ----------------------------------------
 _.range(0,20,5);
 
