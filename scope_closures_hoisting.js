@@ -136,3 +136,7 @@
 	// jQuery('#underscore_button').bind('click', buttonView.onClick);
 
 	// And thus, Underscore saves us from the perils of dynamic scoping.
+
+
+	// function - scope -------------------------------------------  function - scope ---------------------------------------
+	
