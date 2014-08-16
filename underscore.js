@@ -40,6 +40,18 @@ funct = _.bind(funct, {name : 'Ciccio'}, 'Hi ');		// 1- function to bind, 2- obj
 funct();				// Hi : Ciccio  
 
 
+//  _.bindAll()  -----------------------------------------------  _.bindAll()  --------------------------------------------
+// _.bindAll(object, *methodNames) Binds a number of methods on the object, specified by methodNames, to be run in the context 
+// of that object whenever they are invoked. Very handy for binding functions that are going to be used as event handlers, 
+// which would otherwise be invoked with a fairly useless this. methodNames are required.
+
+var buttonView = {label : 'underscore',
+				  onClick : function(){alert('clicked : ' + this.label)},
+				  onHover : function(){alert('hovering : ' + this.label)}
+				};
+_.bindAll(buttonView, 'onClick', 'onHover');
+// jQuery('#underscore_button').bind('click', buttonView.onClick);
+
 // _.countBy()  -----------------------------------------------------------  countBy()  ------------------------------------
 _.countBy(albums, function(a){
 	return a.type; 

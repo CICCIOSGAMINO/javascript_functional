@@ -123,4 +123,16 @@
 	// _.bind(function, obj, *arguments)   meaning that whenever the function is called, the value of this will be the object
 
 	var myThis =_.bind(returnThis, 'ahahahha');
-	console.log(myThis.call('booo'));				// aahahha  
+	myThis.call('booo');				// aahahha  
+
+
+	// _.bindAll()  -----------------------------------------------  _.bindAll()  -------------------------------------------
+
+	var buttonView = {label : 'underscore',
+				  onClick : function(){alert('clicked : ' + this.label)},
+				  onHover : function(){alert('hovering : ' + this.label)}
+				};
+	_.bindAll(buttonView, 'onClick', 'onHover');
+	// jQuery('#underscore_button').bind('click', buttonView.onClick);
+
+	// And thus, Underscore saves us from the perils of dynamic scoping.
