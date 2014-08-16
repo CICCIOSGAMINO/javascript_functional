@@ -29,6 +29,16 @@ _.chain(stooges)
 	.first()
 	.value();					// Brunette is 16 
 
+// _.bind()  --------------------------------------------------  _.bind()  -----------------------------------------------
+//  Underscore provides the function _.bind that allows you to lock the this reference from changing, like the following:
+// _.bind(function, obj, *arguments)   meaning that whenever the function is called, the value of this will be the object
+
+var funct = function(greeting){
+	return greeting + ' : ' + this.name
+} 
+funct = _.bind(funct, {name : 'Ciccio'}, 'Hi ');		// 1- function to bind, 2- object in bind, 3- prama greeting 
+funct();				// Hi : Ciccio  
+
 
 // _.countBy()  -----------------------------------------------------------  countBy()  ------------------------------------
 _.countBy(albums, function(a){

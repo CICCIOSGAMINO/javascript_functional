@@ -100,3 +100,27 @@
 	}
 
 	dynamicLookup('name');				// cicciosgamino 
+
+	// Javascript - this ----------------------------------------  Javascript - this  -----------------------------------------
+	// this reference can point to different values depending on the context in which it was first created 
+	// is also determined by the caller, as shown in the following:
+
+	function returnThis(){
+		return this; 
+	};
+
+	returnThis(); 						// global Node object 
+	returnThis.call('booo');			// { '0': 'b', '1': 'o', '2': 'o', '3': 'o' }
+
+/* 	
+	The value of the this reference is directly manipulable through the use of apply or call. That is, whatever object is 
+	passed into them as the first argument becomes the referenced object. Libraries like jQuery use this as a way to pass
+	context objects and event targets into first-class functions.
+*/ 
+
+	// _.bind()  --------------------------------------------------  _.bind()  -----------------------------------------------
+	//  Underscore provides the function _.bind that allows you to lock the this reference from changing, like the following:
+	// _.bind(function, obj, *arguments)   meaning that whenever the function is called, the value of this will be the object
+
+	var myThis =_.bind(returnThis, 'ahahahha');
+	console.log(myThis.call('booo'));				// aahahha  
