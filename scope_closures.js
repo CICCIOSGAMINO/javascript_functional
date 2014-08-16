@@ -15,8 +15,11 @@
 	+ The variable value resolution scheme, or the lexical bindings 
 */ 
 
+	// global  ------------------------------------------------------  global  --------------------------------------------------
+
 	// "use strict"  ------------------------------------------------  "use strict"  ---------------------------------------------
-	"use strict"				// "use strict"  -> can be use at start file/function to avoid the global vars problems 
+	// "use strict"				// "use strict"  -> can be use at start file/function to avoid the global vars problems 
+	var _ = require('underscore');
 
 	// I’ll start with variables with the longest lifespan—that of the “life” ofthe program itself—globals, a global variable 
 	// thisAGlobalVariable = "this is a global variable ! "; 			// with "use strict" raise a Reference Error 
@@ -26,4 +29,74 @@
 	function foo(){
 		return thisAGlobalVariable; 
 	}
-	foo(); 				
+	foo(); 		
+
+/*
+	The problem with global variables, and the reason that they are so reviled, is that any piece of code can change them 
+	for any reason at any time. This anarchic condition can make for severe pain and missed holidays.	
+
+*/	
+
+	
+	// lexical scope  -----------------------------------------------  lexical scope  --------------------------------------------
+	// Lexical scope refers to the visibility of a variable and its value analogous to its textual representation.
+
+	lexical_var = "GLOBAL";
+	function first(){
+		var lexical_var = "FIRST";				// without var i change the global lexical_var 
+
+		return function(){
+			var lexical_var = "SECOND";
+			return lexical_var; 
+		}();
+
+	}
+	first();		// SECOND 
+
+
+	// dynamic scope  -------------------------------------------------  dynamic scope  --------------------------------------------
+/* 
+	Very few languages use dynamic scope as their primary binding resolution scheme. Dynamic scoping, however, is a simplistic
+	scheme used as the primary scoping mechanism in only a handful of modern pro-gramming languages. I'll show you how simulate 
+	the dynamic scope how it works : 
+
+*/
+	// dynamic scoping is built on the idea of a global table of named values.At the heart of any JavaScript engine you will see—if 
+	// one big honking lookup table:
+	var globals = {};
+
+	function makeBind(resolver){
+		return function(k, v){
+			var stack  = globals[k] || [];
+			globals[k] = resolver(stack, v);
+			return globals; 
+		};
+	};
+
+	// With globals and makeBindFun in place, we can move onto the policies for adding bindings to the globals variable:
+	var stackBinder = makeBind(function(stack, v) {
+		stack.push(v);
+		return stack;
+	});
+	var stackUnbinder = makeBind(function(stack) {
+		stack.pop();
+		return stack;
+	});
+/* 
+	The function stackBinder performs a very simple task (i.e., it takes a key and a value and pushes the value onto the 
+	global bindings map at the slot associated with the key).	Maintaining a global map of stacks associated with binding 
+	names is the core of Dynamic scoping
+*/ 
+	stackBinder('name','ciccio');
+	stackBinder('name','cicciosgamino');
+	stackBinder('name','cicciosgamino_pop');
+	// console.log(globals);
+	stackUnbinder('name');				// get the all the value of var 'name'  --> cicciosgamino_pop 
+
+	// dynamicLookup provides a way to look at the top value 
+	function dynamicLookup(a){
+		var a_array = globals[a] || [];
+		return _.last(a_array);
+	}
+
+	dynamicLookup('name');				// cicciosgamino 
