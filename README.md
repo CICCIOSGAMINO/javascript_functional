@@ -61,6 +61,7 @@ In the folder are present the main functional programming guideliine for Javascr
 
 + Function as Unit 
 + First-Class Functions 
++ Dynamic Binding
 + Variable Scope and Closure 
 + Higher-Order Functions 
 + Functions-Building-Functions 
