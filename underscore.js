@@ -1,4 +1,4 @@
-// some underscore' s example 
+// some underscore' s example, functional is here !! 
 
 var _ = require('underscore');
 

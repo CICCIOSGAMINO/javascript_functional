@@ -139,4 +139,17 @@
 
 
 	// function - scope -------------------------------------------  function - scope ---------------------------------------
-	
+
+
+	// hoisting  --------------------------------------------------  hoisting  ----------------------------------------------
+	// The action of JavaScript to rearrange variable declarations is called hoisting. The implications of this are that any 
+	// piece of code in the function can see all of the variables defined inside.
+	function foo_count(n){
+		for(var i = 0 ; i < n; i++);
+		return i; 
+	};
+	console.log(foo_count(5));
+	console.log(i);
+
+
+	// AND Again !! 
