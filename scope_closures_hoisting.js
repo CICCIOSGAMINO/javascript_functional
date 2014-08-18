@@ -20,6 +20,7 @@
 	// "use strict"  ------------------------------------------------  "use strict"  ---------------------------------------------
 	// "use strict"				// "use strict"  -> can be use at start file/function to avoid the global vars problems 
 	var _ = require('underscore');
+	var crypto = require('crypto');
 
 	// I’ll start with variables with the longest lifespan—that of the “life” ofthe program itself—globals, a global variable 
 	// thisAGlobalVariable = "this is a global variable ! "; 			// with "use strict" raise a Reference Error 
@@ -148,11 +149,116 @@
 		for(var i = 0 ; i < n; i++);
 		return i; 
 	};
-	foo_count(5);			// --> 5  hoisting 
+	foo_count(5);				// --> 5  hoisting 
 
 	function foo_count_(n){
 		for(this['i'] = 0; this['i'] < n; this['i']++);
 		return this['i'];
 	};
 
-	foo_count_(99);			// --> 99  simulated hoisting with this object 
+	foo_count_(99);				// --> 99  simulated hoisting with this object 
+	i;							// --> 99
+
+	// BE CAREFUL 
+	foo_count_.call({}, 200);	// --> 200
+	i;							// --> 99
+
+	// BE CAREFUL 
+	foo_count_.call(null, 399);
+	i;							// --> 399 
+
+
+
+	// closure  ------------------------------------------------  closure   ----------------------------------------------------
+	/* 
+		Languages without first-class functions can support closures, but they’re often greatly stunted. Thankfully, JavaScript 
+		supports first-class functions, so its closures are a pow‐erful way to pass around ad hoc encapsulated states.
+
+		Closure is a function that “captures” values near where it was born. 
+
+		What is a closure? In a sentence, a closure is a function that captures the external bindings (i.e., not its own arguments) 
+		contained in the scope in which it was defined for later use.
+	*/ 
+
+	function getHashKey(){
+		var SECRET_KEY = "7c1789c3-942b-4855-b8e3-00d7f7efb9de"; 
+		var shaHash = crypto.createHash('sha1');
+		shaHash.update(SECRET_KEY);
+		var hKey = shaHash.digest('hex');
+
+		return function(){
+			return "HASH KEY : " + hKey;
+		};
+	};
+
+
+	var myKey = getHashKey()();
+	myKey;									// HASH KEY : 15ff34260d2ecb18ccde7c3be9930553c00f12e8
+
+	// The same with the ARGUMENTS 
+
+	function genrateKey(SEEED){
+
+		var shaHash = crypto.createHash('sha1');
+		shaHash.update(SEEED);
+		var hKey = shaHash.digest('hex');
+		
+		return function(){
+			return SEEED + " : " + hKey; 
+		};
+	};
+
+	genrateKey('cicciosgamino')();			//  cicciosgamino : fe03925f5be9f4a085e4b7ac56eee07da99c77a4
+
+
+	// Simulate the closure using the function-scope this 
+	function generateNewKey(SEEED){
+
+		var shaHash = crypto.createHash('sha1');
+		shaHash.update(SEEED);
+		var hKey = shaHash.digest('hex');
+
+		// use the this to pass info to inner function 
+		this['SEEED'] = SEEED;
+		this['hKey'] = hKey;
+		// var that = this; 
+
+		// return _.bind(function(){return this['SEEED'] + " : " + this['hKey']}, that);
+		return function(){return this['SEEED'] + " : " + this['hKey']};
+
+	}
+
+	generateNewKey('cicciosgamino')();
+
+	/* 
+		Wow, keeping track of which variables are needed within the body of inner functions seems like a real pain. 
+		If you needed to keep track manually, like in this example, then JavaScript would be exceedingly difficult 
+		to write. Thankfully for us, the machinery driving variable capture is automatic and straightforward to use.
+
+	*/ 
+
+
+	// shadowing  -------------------------------------------------  shadowing  -----------------------------------------
+	// two declaratio of the same variable 
+	var shadow = 0;
+	function goShadow(shadow){
+		var shadow = 999;
+		return ['Value is : ', shadow].join(''); 
+	};
+
+	goShadow();							//  999 
+
+	var SHADOW = 0; 
+	function cameOnShadow(SHADOW){
+		return function(SHADOW){
+			return " SHADOW : " + SHADOW;
+		};
+	};
+	var a_shadow = cameOnShadow(10);
+	a_shadow(99);						// 99 
+
+
+	/* 
+		trend to avoid shadowed variables when writing JavaScript code. If you’re not careful, then shadowing can cause 
+		confusion if you’ve not accounted for it.
+	*/ 

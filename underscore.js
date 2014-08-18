@@ -19,16 +19,6 @@ _.any(['a','v','g', 3], _.isNumber); 		// true
 // _.all()  ---------------------------------------------------------------  all()  -----------------------------------------
 _.all([1,2,6,5,4,6,3], _.isNumber); 		// true 
 
-// _.chain(obj)  -----------------------------------------------------------  chain()  --------------------------------------
-// Returns a wrapped object. Calling methods on this object will continue to return wrapped objects until value is used.
-
-_.chain(stooges).value() 		// the same Obj 
-_.chain(stooges)
-	.sortBy(function(x){return x.age})
-	.map(function(x){return x.name + ' is ' + x.age})
-	.first()
-	.value();					// Brunette is 16 
-
 // _.bind()  --------------------------------------------------  _.bind()  -----------------------------------------------
 //  Underscore provides the function _.bind that allows you to lock the this reference from changing, like the following:
 // _.bind(function, obj, *arguments)   meaning that whenever the function is called, the value of this will be the object
@@ -52,10 +42,27 @@ var buttonView = {label : 'underscore',
 _.bindAll(buttonView, 'onClick', 'onHover');
 // jQuery('#underscore_button').bind('click', buttonView.onClick);
 
+
+// _.chain(obj)  -----------------------------------------------------------  chain()  --------------------------------------
+// Returns a wrapped object. Calling methods on this object will continue to return wrapped objects until value is used.
+
+_.chain(stooges).value() 		// the same Obj 
+_.chain(stooges)
+	.sortBy(function(x){return x.age})
+	.map(function(x){return x.name + ' is ' + x.age})
+	.first()
+	.value();					// Brunette is 16 
+
+
 // _.countBy()  -----------------------------------------------------------  countBy()  ------------------------------------
 _.countBy(albums, function(a){
 	return a.type; 
 });									// { 'punk rock': 2, 'heavy metal': 2 }
+
+
+// _.delay()  ------------------------------------------------------------- delay()  ----------------------------------------
+_.delay(console.log, 2000, 'Hello DELAY !');
+
 
 
 // _.each()   -------------------------------------------------------------  each()  ----------------------------------------
@@ -91,7 +98,7 @@ _.map([1,2,3,5,7,11,13], function(x){
 //  _.matches()  ----------------------------------------------------------  matches()  ----------------------------------------
 var list = [{_id : '5dg8d4gsf', temp : 25, pressure : 101325, humidity : 45}, {_id : '5dg8d4gsf', temp : 20, pressure : 101325, humidity : 45}];
 var temp_25  = _.matches({temp : 25 });	// returns a predicate function,if a passed in obj contains all the key/values 
-console.log(_.filter(list, temp_25));
+_.filter(list, temp_25);
 
 
 // _-noConflict()  --------------------------------------------------------  noConflict()  -----------------------------------
