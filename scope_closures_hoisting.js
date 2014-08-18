@@ -148,8 +148,11 @@
 		for(var i = 0 ; i < n; i++);
 		return i; 
 	};
-	console.log(foo_count(5));
-	console.log(i);
+	foo_count(5);			// --> 5  hoisting 
 
+	function foo_count_(n){
+		for(this['i'] = 0; this['i'] < n; this['i']++);
+		return this['i'];
+	};
 
-	// AND Again !! 
+	foo_count_(99);			// --> 99  simulated hoisting with this object 
