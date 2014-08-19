@@ -237,6 +237,19 @@
 
 	*/ 
 
+	// Other closure example 
+	function always(VALUE){
+		return function(){
+			return VALUE;
+		};
+	};
+	var f = always(function(){});
+	f() === f() 		// true 
+
+	var g = always(function(){});
+
+	f() === g();		// false 
+
 
 	// shadowing  -------------------------------------------------  shadowing  -----------------------------------------
 	// two declaratio of the same variable 

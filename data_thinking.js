@@ -90,7 +90,6 @@
  	_.where(creatures, {real : false});  //  [ { name: 'Daemon',details: '...', nation: 'greek', real: false } ]
 
 
-
-
+ 
 
 	
