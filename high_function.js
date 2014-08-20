@@ -75,4 +75,34 @@
 	};
 
 	var uniqueString = makeUniqueString(1000);
-	console.log( 1 + ' : ' + uniqueString('ak-47') + " | " + 2 + " : " + uniqueString('A1-M1'));
+	// console.log( 1 + ' : ' + uniqueString('ak-47') + " | " + 2 + " : " + uniqueString('A1-M1'));
+
+
+	// fnull()  ------------------------------------------------  fnull()  ------------------------------------------------------
+	// we use a fnull() function with default value to avoid 
+	var nums = [1,2,3, null, 5,7,11, undefined];
+	_.reduce(nums, function(mem, n){
+		return mem + n;
+	});									// ERORR NaN 
+
+	function existy(x){
+	return x != null
+	};									
+
+	function fnull(fun /*, default */){
+		var defaults = _.rest(arguments);
+		
+		return function(/* args */){
+			var args = _.map(arguments, function(e, i){
+				return existy(e) ? e : defaults[i];
+			});
+			return fun.apply(null, args);
+		};
+	};
+
+	var safeMultiply = fnull(function(a, b){
+		return a * b 
+	}, 1, 1); 
+
+	_.reduce(nums, safeMultiply);					// 2310 
+

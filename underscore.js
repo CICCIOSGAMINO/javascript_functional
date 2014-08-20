@@ -1,4 +1,4 @@
-// some underscore' s example, functional is here !! 
+// simple implementation of some underscore functional javascript library functions 
 
 var _ = require('underscore');
 
@@ -117,6 +117,10 @@ _.range(0,20,5);
 // _.reduce(list, iterator, memo, [context])  ----------------------------  reduce()  ---------------------------------------
 var sum = _.reduce([1,2,3,5,7,11,13,17,19],function(memo, n ){return memo +n }, 0);
 
+
+
+// _.rest()  --------------------------------------------------------------  rest()  ----------------------------------------
+_.rest([6,5,4,3,2,1,0],2); 			// [4,3,2,1,0]
 
 
 // _.sortBy()  ------------------------------------------------------------  sortBy()  --------------------------------------
