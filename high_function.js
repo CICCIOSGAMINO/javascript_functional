@@ -89,6 +89,8 @@
 	return x != null
 	};									
 
+
+	// very powerful function, check the null params and put the default value in it !! 
 	function fnull(fun /*, default */){
 		var defaults = _.rest(arguments);
 		
