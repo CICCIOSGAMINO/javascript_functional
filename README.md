@@ -8,14 +8,14 @@ consists of the following techniques:
 
 + Identifying an abstraction and building a function for it
 + Using existing functions to build more complex abstractions
-+ Passing existing functions to other functions to build even more complex abstractions
++ Passing existing functions to other functions to build even more complex abstractions (even more)
 
 
 **It is better to have 100 functions operate on one data structure than 10 functions on 10 data structures**
 
 However, functions are not enough. In fact, functional programming very often works
 best when implemented in concert with powerful data abstractions. There is a beautiful
-symmetry between functional programming and data.
+symmetry between functional programming and data. (Cheke the data_thinking)
 
 Having said that, a nice image of a system built along functional principles is an
 assembly-line device that takes raw materials in one end, and gradually builds a product
