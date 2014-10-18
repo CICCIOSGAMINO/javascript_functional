@@ -18,6 +18,7 @@
 	and _.pluck
 
 */
+	// a little bit of underscore to use pure functional programming 
 	var _ = require('underscore');
 
 	var creatures = [{name : 'Agloolik', details : 'Ice spirit that aids hunters and fishermen'},
